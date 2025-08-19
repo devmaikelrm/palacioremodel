@@ -40,7 +40,7 @@ export default function HeroSection() {
             <img 
               src={logoImage} 
               alt="Palacio Remodeling" 
-              className="w-32 h-32 object-contain" 
+              className="w-20 h-20 object-contain" 
             />
           </div>
         </div>
