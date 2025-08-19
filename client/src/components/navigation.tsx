@@ -60,6 +60,13 @@ export default function Navigation() {
               Our Values
             </button>
             <button 
+              onClick={() => scrollToSection("portfolio")}
+              className="hover:text-accent-orange transition-colors font-medium"
+              data-testid="nav-portfolio"
+            >
+              Portfolio
+            </button>
+            <button 
               onClick={() => scrollToSection("testimonials")}
               className="hover:text-accent-orange transition-colors font-medium"
               data-testid="nav-testimonials"
