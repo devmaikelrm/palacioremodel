@@ -23,6 +23,9 @@ A modern, interactive website for Palacio Remodeling with enhanced visual design
 - Added comprehensive project portfolio gallery with before/after comparisons
 - Created interactive slider for image comparisons
 - Added category filtering and project modal views
+- Implemented dynamic testimonial carousel with auto-play functionality
+- Added 6 authentic customer testimonials with locations and ratings
+- Created smooth transitions, navigation controls, and pause/play features
 
 ## User Preferences
 - All text content in English
