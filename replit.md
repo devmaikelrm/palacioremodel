@@ -1,6 +1,6 @@
 # Overview
 
-This is a modern, full-stack website for Palacio Remodeling, a premium construction and renovation company. The project features an interactive, visually appealing website with comprehensive sections including services, portfolio gallery, testimonials, and contact forms. The application showcases the company's expertise in kitchen renovations, bathroom remodels, home additions, and custom construction projects with a focus on visual storytelling and user engagement.
+This is a modern, interactive website for Palacio Remodeling, a construction and remodeling company. The website showcases their services including kitchen renovations, bathroom remodels, home additions, and custom construction. It features an interactive portfolio gallery with before/after project comparisons, dynamic testimonial carousel, and responsive design optimized for all devices. The site emphasizes visual storytelling with modern animations, high contrast design for accessibility, and performance optimization.
 
 # User Preferences
 
@@ -10,77 +10,63 @@ Preferred communication style: Simple, everyday language.
 
 ## Frontend Architecture
 - **Framework**: React 18 with TypeScript for type safety and modern development
-- **Build Tool**: Vite for fast development and optimized builds
-- **Styling**: Tailwind CSS with custom design system using earth tones and vibrant accents
-- **UI Components**: Extensive use of Radix UI primitives through shadcn/ui for accessible, customizable components
-- **Animations**: Custom CSS animations and scroll-based reveal effects for enhanced user experience
-- **Typography**: Multi-font strategy combining Playfair Display (serif), Inter (sans-serif), and Montserrat for visual hierarchy
-- **Responsive Design**: Mobile-first approach with tablet and desktop optimizations
+- **Build Tool**: Vite for fast development and optimized production builds
+- **Styling**: Tailwind CSS with custom CSS variables for consistent theming
+- **UI Components**: Radix UI primitives with shadcn/ui component library for accessibility and consistency
+- **Animations**: Framer Motion for smooth transitions and scroll reveal effects
+- **Routing**: Wouter for lightweight client-side routing
+- **State Management**: TanStack React Query for server state management
+- **Form Handling**: React Hook Form with Zod validation for type-safe forms
 
 ## Backend Architecture
-- **Runtime**: Node.js with Express.js server
-- **Language**: TypeScript throughout the stack for consistency
-- **Development**: Hot module replacement and development middleware via Vite integration
-- **Static Assets**: Served through Express with proper caching headers
-- **API Structure**: RESTful API design ready for future expansion
+- **Server**: Express.js with TypeScript for API endpoints
+- **Build Process**: ESBuild for server bundling with external package handling
+- **Development**: Hot module replacement and runtime error overlay via Vite plugins
+- **Storage Interface**: Abstracted storage layer with in-memory implementation for user management
+- **Middleware**: JSON parsing, URL encoding, request logging, and error handling
 
-## Data Storage Solutions
-- **Database**: PostgreSQL configured via Drizzle ORM
-- **Connection**: Neon Database serverless PostgreSQL for scalability
-- **Schema Management**: Drizzle Kit for migrations and schema evolution
-- **Session Storage**: PostgreSQL-based session store using connect-pg-simple
-- **Development Storage**: In-memory storage implementation for development and testing
+## Database Design
+- **ORM**: Drizzle ORM with PostgreSQL dialect for type-safe database operations
+- **Schema**: User table with UUID primary keys, username, and password fields
+- **Migrations**: Automated schema migrations via Drizzle Kit
+- **Connection**: Neon Database serverless connection with environment-based configuration
 
-## Authentication and Authorization
-- **User Schema**: Basic user model with username/password authentication ready
-- **Session Management**: Express sessions with PostgreSQL persistence
-- **Security**: Prepared infrastructure for future authentication implementation
+## Design System
+- **Typography**: Google Fonts integration (Playfair Display serif, Inter sans-serif, Montserrat)
+- **Color Scheme**: Dark theme with navy backgrounds, cream text, accent orange, and gold highlights
+- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+- **Accessibility**: High contrast ratios, semantic HTML, ARIA attributes, and keyboard navigation
 
 ## Component Architecture
-- **Design System**: Consistent component library with theme variables and variants
-- **Scroll Animations**: Custom scroll reveal hooks for progressive content disclosure
-- **Form Handling**: React Hook Form with Zod validation for type-safe form processing
-- **State Management**: TanStack Query for server state and React hooks for local state
-- **Routing**: Wouter for lightweight client-side routing
-
-## Content Management
-- **Portfolio System**: Dynamic project gallery with before/after image comparisons
-- **Testimonial Carousel**: Automated testimonial rotation with manual controls
-- **Service Showcase**: Interactive service cards with hover animations
-- **Contact Forms**: Multi-step contact forms with project type selection
+- **Atomic Design**: Reusable UI components in `/components/ui/` directory
+- **Feature Components**: Page-specific components for sections like hero, services, portfolio
+- **Custom Hooks**: Scroll reveal animations, mobile detection, and toast notifications
+- **Scroll Animations**: Intersection Observer API for reveal effects on scroll
 
 # External Dependencies
 
-## UI and Styling
-- **Radix UI**: Complete accessible component primitives for complex UI patterns
-- **Tailwind CSS**: Utility-first CSS framework with custom design tokens
-- **Lucide React**: Modern icon library for consistent iconography
-- **Font Awesome**: Extended icon set for construction and business-specific icons
-- **Google Fonts**: Custom font loading for Playfair Display, Inter, and Montserrat
+## Core Libraries
+- **React Ecosystem**: React 18, React DOM, React Hook Form, React Query
+- **UI Framework**: Radix UI component primitives for accessibility
+- **Styling**: Tailwind CSS with PostCSS and Autoprefixer
+- **Animations**: Framer Motion for smooth transitions and effects
+- **Icons**: Font Awesome and Lucide React for comprehensive icon sets
 
-## Database and ORM
-- **Neon Database**: Serverless PostgreSQL database hosting
-- **Drizzle ORM**: Type-safe database operations with automatic migration generation
-- **Drizzle Zod**: Schema validation integration between database and runtime validation
+## Development Tools
+- **Build Tools**: Vite with React plugin and TypeScript support
+- **Code Quality**: TypeScript for static typing, ESLint configuration
+- **Database**: Drizzle ORM with PostgreSQL support via Neon Database
+- **Validation**: Zod for runtime type checking and form validation
+- **Utilities**: Class Variance Authority for component variants, clsx for conditional classes
 
-## Form and State Management
-- **React Hook Form**: Performant form handling with minimal re-renders
-- **Zod**: Runtime type validation for forms and API responses
-- **TanStack Query**: Server state management with caching and synchronization
-- **Hookform Resolvers**: Zod integration for form validation
+## External Services
+- **Database**: Neon Database serverless PostgreSQL
+- **Images**: Unsplash API for high-quality stock photography
+- **Fonts**: Google Fonts API for typography
+- **Hosting**: Configured for Replit deployment with development banners
 
-## Development and Build
-- **Vite**: Fast build tool with HMR and optimized production builds
-- **TypeScript**: Full-stack type safety and development experience
-- **ESBuild**: Fast JavaScript bundling for server-side code
-- **PostCSS**: CSS processing with Tailwind CSS integration
-
-## Asset Management
-- **Unsplash**: Copyright-free stock photography for portfolio and testimonials
-- **Custom Assets**: Logo and branding assets stored in attached_assets directory
-
-## Utilities and Enhancements
-- **date-fns**: Date manipulation and formatting utilities
-- **clsx**: Conditional CSS class name utility
-- **class-variance-authority**: Type-safe component variant management
-- **Embla Carousel**: Touch-friendly carousel for testimonials and portfolio
+## Development Environment
+- **Package Manager**: npm with lock file for consistent dependencies
+- **Runtime**: Node.js with ES modules support
+- **Development Server**: Vite dev server with HMR and middleware integration
+- **Error Handling**: Runtime error overlay and comprehensive logging
