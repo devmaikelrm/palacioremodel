@@ -94,6 +94,9 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
           <p>&copy; 2024 Palacio Remodeling. All rights reserved. | Licensed & Insured | ROC #123456</p>
+          <p className="text-gray-500 text-sm mt-2">
+            Website created by <span className="text-accent-orange font-medium">MaikelDev</span>
+          </p>
         </div>
       </div>
     </footer>
