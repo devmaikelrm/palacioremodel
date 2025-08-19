@@ -100,18 +100,19 @@
 
   .logo-enhanced {
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    border: 3px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
   }
 
   .logo-enhanced:hover {
     transform: scale(1.05);
-    border-color: rgba(255, 107, 53, 0.3);
-    filter: drop-shadow(0 8px 16px rgba(255, 107, 53, 0.2));
+    border-color: rgba(255, 107, 53, 0.6);
+    filter: drop-shadow(0 8px 16px rgba(255, 107, 53, 0.4));
+    background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,193,7,0.05) 100%);
   }
 
   .service-card {

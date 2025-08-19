@@ -12,7 +12,7 @@ export default function ScrollReveal({ children, className, delay = 0 }: ScrollR
 
   return (
     <div
-      ref={ref}
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "scroll-reveal",
         isVisible && "revealed",
