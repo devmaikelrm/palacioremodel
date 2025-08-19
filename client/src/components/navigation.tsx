@@ -28,7 +28,7 @@ export default function Navigation() {
         isScrolled ? "bg-navy/95 backdrop-blur-md" : "bg-navy/90 backdrop-blur-md"
       )}
     >
-      <div className="max-w-5xl mx-auto px-3 py-1.5">
+      <div className="max-w-4xl mx-auto px-2 py-1">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="logo-enhanced">
