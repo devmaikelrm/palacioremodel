@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palacio Remodeling - Construcción y Renovación de Calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'earth-primary': '#8B7355',
+                        'earth-light': '#D4C4A0',
+                        'earth-lightest': '#F5F3F0',
+                        'mustard': '#D4AF37',
+                        'terracotta': '#D2691E',
+                        'charcoal': '#2D2D2D'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'bounce-subtle': 'bounceSubtle 2s infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        bounceSubtle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 5px rgba(212, 175, 55, 0.5)' },
+                            '100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .logo-enhanced {
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            border: 3px solid #D4AF37;
+            border-radius: 12px;
+            padding: 12px;
+            background: rgba(255,255,255,0.95);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-enhanced:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            border-color: #D2691E;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .service-card:hover::before {
+            left: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.8) 0%, rgba(212, 196, 160, 0.6) 100%);
+        }
+        
+        .icon-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .icon-hover:hover {
+            color: #D4AF37;
+            transform: scale(1.2) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans bg-earth-lightest">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-earth-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo-enhanced animate-pulse-glow">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMTIwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSI2MCIgeT0iMjAiIGZvbnQtZmFtaWx5PSJQbGF5ZmFpciBEaXNwbGF5LCBzZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzJEMkQyRCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UjwvdGV4dD4KPHN2ZyB4PSI0NSIgeT0iMTIiIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDE2Ij4KPHBhdGggZD0iTTEyIDJMMjIgOFYxNkgyVjhMMTIgMloiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJEMkQyRCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo8dGV4dCB4PSI2MCIgeT0iNDUiIGZvbnQtZmFtaWx5PSJQbGF5ZmFpciBEaXNwbGF5LCBzZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJEMkQyRCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UEFMQUNJPC90ZXh0Pgo8dGV4dCB4PSI2MCIgeT0iNjUiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMCIgZm9udC13ZWlnaHQ9IjUwMCIgZmlsbD0iIzJEMkQyRCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UkVNT0RFSU5HPC90ZXh0Pgo8L3N2Zz4K" alt="Palacio Remodeling" class="h-16 w-auto"/>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-charcoal hover:text-mustard transition-colors duration-300 font-medium">Inicio</a>
+                    <a href="#servicios" class="text-charcoal hover:text-mustard transition-colors duration-300 font-medium">Servicios</a>
+                    <a href="#valores" class="text-charcoal hover:text-mustard transition-colors duration-300 font-medium">Valores</a>
+                    <a href="#testimonios" class="text-charcoal hover:text-mustard transition-colors duration-300 font-medium">Testimonios</a>
+                    <a href="#contacto" class="bg-mustard text-white px-6 py-2 rounded-full hover:bg-terracotta transition-colors duration-300 font-medium">Contacto</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-charcoal hover:text-mustard">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Construction Background -->
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto animate-fade-in-up">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Construimos <span class="text-mustard">Sueños</span> con <span class="text-mustard">Calidad</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto">
+                Con años de experiencia en construcción y renovación, transformamos espacios creando hogares únicos que reflejan tu estilo de vida.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#servicios" class="bg-mustard text-white px-8 py-4 rounded-full hover:bg-terracotta transition-all duration-300 font-semibold text-lg hover:scale-105 hover:shadow-lg">
+                    Conocé Nuestros Servicios
+                </a>
+                <a href="#contacto" class="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-charcoal transition-all duration-300 font-semibold text-lg hover:scale-105">
+                    Solicitá una Consulta
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Animation Elements -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce-subtle">
+            <i class="fas fa-chevron-down text-2xl opacity-70"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-charcoal mb-6">
+                    Nuestros <span class="text-terracotta">Servicios</span>
+                </h2>
+                <p class="text-xl text-earth-primary max-w-3xl mx-auto leading-relaxed">
+                    Ofrecemos soluciones integrales para todos tus proyectos de construcción y renovación
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Renovación -->
+                <div class="service-card bg-earth-lightest p-8 rounded-2xl shadow-lg hover:shadow-xl">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-hammer icon-hover text-5xl text-terracotta mb-4"></i>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-4">Renovación Completa</h3>
+                    </div>
+                    <!-- Modern kitchen renovation with white cabinets and marble countertops -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Renovación moderna de cocina" class="w-full h-48 object-cover rounded-xl mb-4"/>
+                    <p class="text-earth-primary leading-relaxed mb-6">
+                        Transformamos espacios existentes con diseño moderno y materiales de primera calidad. Cada renovación cuenta una historia de cambio y mejora.
+                    </p>
+                    <ul class="text-sm text-earth-primary space-y-2">
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Cocinas y baños modernos</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Renovación de pisos y techos</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Optimización de espacios</li>
+                    </ul>
+                </div>
+
+                <!-- Construcción Personalizada -->
+                <div class="service-card bg-earth-lightest p-8 rounded-2xl shadow-lg hover:shadow-xl">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-home icon-hover text-5xl text-terracotta mb-4"></i>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-4">Construcción Personalizada</h3>
+                    </div>
+                    <!-- Custom built modern house with large windows and contemporary design -->
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Casa personalizada moderna" class="w-full h-48 object-cover rounded-xl mb-4"/>
+                    <p class="text-earth-primary leading-relaxed mb-6">
+                        Diseñamos y construimos hogares únicos desde cero, adaptándose perfectamente a tu estilo de vida y necesidades específicas.
+                    </p>
+                    <ul class="text-sm text-earth-primary space-y-2">
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Diseño arquitectónico personalizado</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Materiales sostenibles</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Eficiencia energética</li>
+                    </ul>
+                </div>
+
+                <!-- Gestión de Proyectos -->
+                <div class="service-card bg-earth-lightest p-8 rounded-2xl shadow-lg hover:shadow-xl">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-cogs icon-hover text-5xl text-terracotta mb-4"></i>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal mb-4">Gestión Integral</h3>
+                    </div>
+                    <!-- Construction project management with blueprints and tools -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Gestión de proyecto de construcción" class="w-full h-48 object-cover rounded-xl mb-4"/>
+                    <p class="text-earth-primary leading-relaxed mb-6">
+                        Coordinamos cada aspecto de tu proyecto, desde el diseño inicial hasta la entrega final, garantizando calidad y tiempos de ejecución.
+                    </p>
+                    <ul class="text-sm text-earth-primary space-y-2">
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Planificación detallada</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Supervisión profesional</li>
+                        <li><i class="fas fa-check text-mustard mr-2"></i>Control de calidad riguroso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section with Storytelling -->
+    <section id="valores" class="py-20 bg-earth-light parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080'); background-blend-mode: overlay;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+                    Nuestros <span class="text-mustard">Valores</span>
+                </h2>
+                <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+                    Cada proyecto es una oportunidad de demostrar nuestra pasión por la excelencia
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Calidad Artesanal -->
+                <div class="bg-white/95 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-terracotta p-4 rounded-full mr-4">
+                            <i class="fas fa-gem text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoal">Calidad Artesanal</h3>
+                    </div>
+                    <p class="text-earth-primary leading-relaxed mb-4">
+                        <strong>La historia de la cocina perfecta:</strong> Un cliente nos desafió a renovar su cocina en solo tres semanas para una celebración familiar. No solo cumplimos el plazo, sino que cada detalle - desde las molduras hechas a mano hasta la selección perfecta de materiales - superó sus expectativas.
+                    </p>
+                    <p class="text-sm text-earth-primary italic">
+                        "La atención al detalle marcó la diferencia entre una simple renovación y la cocina de nuestros sueños."
+                    </p>
+                </div>
+
+                <!-- Compromiso Temporal -->
+                <div class="bg-white/95 p-8 rounded-2xl shadow-xl backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-mustard p-4 rounded-full mr-4">
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-charcoalLet me analyze this project based on the design decision framework:
+
+1. Initial Analysis:
+- The request is for a Spanish construction/remodeling company website (Palacio Remodeling)
+- They want a visually rich, interactive design with animations and modern aesthetics
+- No specific aesthetic reference was mentioned, so I'll use the framework to decide
+
+2. Framework Evaluation:
+A. Purpose & User Needs: Experience-Focused - needs to showcase work and build trust
+B. Content Characteristics: Visual-Rich - showcasing construction/renovation work
+C. Market Context: Design-Differentiated - construction industry where visual portfolio matters
+D. Update Frequency: Trend-Sensitive - wants modern, interactive elements
+E. Component Complexity: Custom UI Needed - requires animations, parallax, interactive elements
+
+This is clearly 5/5 Experience-Focused factors, so I should use a Reference-Based Approach. For construction/home services, I should look at companies like Airbnb (for trust and visual appeal) and modern portfolio sites.
+
+The design should feature:
+- Hero section with video/animation background
+- Earth tones with vibrant accents (mustard, terracotta)
+- Serif titles + sans-serif content
+- Animated icons and hover effects
+- Parallax scrolling
+- Interactive testimonials
+- Logo enhancement with effects
+
+I need to use the provided logo and create a comprehensive, modern website that showcases their remodeling services.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# style
+**Design Approach**: Reference-based approach inspired by modern construction and home improvement websites, blending Airbnb's trust-building elements with portfolio-style visual storytelling.
+
+**Color Palette**: Earth tones foundation (#8B7355, #A0956B, #D4C4A0) with vibrant terracotta (#D2691E) and mustard (#DAA520) accents, complemented by clean whites and deep charcoal (#2D2D2D).
+
+**Typography**: Elegant serif (Playfair Display) for headings paired with clean Nunito Sans for body text, creating professional hierarchy.
+
+**Layout**: Parallax-enabled sections with asymmetric grids, full-width hero with video overlay, card-based service displays, and seamless scroll transitions.
+
+**Components**: Interactive flip cards, animated service icons (Heroicons), testimonial carousels, hover-enhanced CTAs, and microinteraction-rich navigation.
+
+**Interactions**: Smooth parallax scrolling, icon hover animations, button state transitions, and logo enhancement effects with subtle shadows and borders.
+
+# directory_structure
+```json
+[
+     {"path": "production_design_mockup.html", "status": "new"}
+]

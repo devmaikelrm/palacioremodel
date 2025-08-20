@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palacio Remodeling - Transform Your Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navy: '#1a1a2e',
+                    charcoal: '#2c2c54',
+                    cream: '#fafafa',
+                    accent: '#ff6b35',
+                    gold: '#ffd23f'
+                },
+                fontFamily: {
+                    'playfair': ['Playfair Display', 'serif'],
+                    'inter': ['Inter', 'sans-serif'],
+                    'montserrat': ['Montserrat', 'sans-serif']
+                },
+                animation: {
+                    'float': 'float 3s ease-in-out infinite',
+                    'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    'bounce-gentle': 'bounce-gentle 2s infinite',
+                    'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-10px)' }
+                    },
+                    'bounce-gentle': {
+                        '0%, 100%': { transform: 'translateY(0)' },
+                        '50%': { transform: 'translateY(-5px)' }
+                    },
+                    'fade-in-up': {
+                        '0%': { opacity: '0', transform: 'translateY(30px)' },
+                        '100%': { opacity: '1', transform: 'translateY(0)' }
+                    }
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .logo-enhanced {
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-enhanced:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 107, 53, 0.3);
+            filter: drop-shadow(0 8px 16px rgba(255, 107, 53, 0.2));
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+            color: #ff6b35;
+        }
+        
+        .service-icon {
+            transition: all 0.6s ease;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #ffd23f 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-navy text-cream font-inter overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="logo-enhanced animate-pulse-slow">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAC0AK0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Palacio Remodeling" class="w-12 h-12 object-contain" />
+                    </div>
+                    <div>
+                        <h1 class="font-playfair font-bold text-xl text-white">Palacio Remodeling</h1>
+                        <p class="text-gray-300 text-sm font-montserrat">Transform Your Space</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="hover:text-accent transition-colors font-medium">Services</a>
+                    <a href="#values" class="hover:text-accent transition-colors font-medium">Our Values</a>
+                    <a href="#testimonials" class="hover:text-accent transition-colors font-medium">Testimonials</a>
+                    <a href="#contact" class="cta-button px-6 py-2 rounded-lg text-white font-montserrat font-semibold">Get Quote</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax Background -->
+    <section class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: linear-gradient(rgba(26, 26, 46, 0.7), rgba(44, 44, 84, 0.8)), url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+        <!-- Construction team working on modern home renovation -->
+        <div class="absolute inset-0 bg-gradient-to-br from-navy/80 via-charcoal/70 to-navy/90"></div>
+        
+        <!-- Floating construction tools background elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <i class="fas fa-hammer absolute top-20 left-20 text-accent/20 text-6xl animate-float" style="animation-delay: 0s;"></i>
+            <i class="fas fa-hard-hat absolute top-40 right-32 text-gold/20 text-5xl animate-float" style="animation-delay: 1s;"></i>
+            <i class="fas fa-home absolute bottom-40 left-32 text-accent/20 text-7xl animate-float" style="animation-delay: 2s;"></i>
+            <i class="fas fa-tools absolute bottom-20 right-20 text-gold/20 text-4xl animate-float" style="animation-delay: 0.5s;"></i>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <!-- Enhanced Logo Display -->
+            <div class="mb-8 flex justify-center">
+                <div class="logo-enhanced animate-bounce-gentle">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAC0AK0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Palacio Remodeling" class="w-32 h-32 object-contain" />
+                </div>
+            </div>
+            
+            <h1 class="font-playfair text-6xl md:text-8xl font-bold mb-6 text-white drop-shadow-lg">
+                Transform Your
+                <span class="text-accent">Dream Space</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-100 font-inter leading-relaxed drop-shadow-md">
+                With years of experience in premium remodeling and construction, 
+                <br class="hidden md:block">
+                we bring your vision to life with craftsmanship that lasts generations
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="cta-button px-8 py-4 text-lg font-montserrat font-semibold rounded-lg text-white hover:scale-105 transition-all">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    Get Free Consultation
+                </button>
+                <button class="border-2 border-white/30 hover:border-accent px-8 py-4 text-lg font-montserrat font-semibold rounded-lg text-white hover:bg-accent/20 transition-all">
+                    <i class="fas fa-play mr-2"></i>
+                    View Our Work
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-playfair text-5xl font-bold mb-6">Our Expert Services</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-inter leading-relaxed">
+                    From concept to completion, we deliver exceptional results with every project. 
+                    Our comprehensive services ensure your vision becomes reality.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Home Renovation -->
+                <div class="service-card bg-navy/80 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:border-accent/30">
+                    <div class="service-icon mb-6">
+                        <i class="fas fa-home text-6xl text-gold mb-4"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-white">Complete Renovations</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Transform your entire home with our comprehensive renovation services. 
+                        From kitchen makeovers to full home remodels, we handle every detail.
+                    </p>
+                    <div class="flex flex-wrap gap-2 justify-center mb-6">
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Kitchens</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Bathrooms</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Living Spaces</span>
+                    </div>
+                    <button class="text-accent hover:text-gold font-semibold font-montserrat transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Custom Construction -->
+                <div class="service-card bg-navy/80 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:border-accent/30">
+                    <div class="service-icon mb-6">
+                        <i class="fas fa-hammer text-6xl text-gold mb-4"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-white">Custom Construction</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Build your dream home from the ground up with our custom construction expertise. 
+                        We specialize in unique designs that reflect your personal style.
+                    </p>
+                    <div class="flex flex-wrap gap-2 justify-center mb-6">
+                        <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-medium">New Builds</span>
+                        <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-medium">Additions</span>
+                        <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-medium">Extensions</span>
+                    </div>
+                    <button class="text-accent hover:text-gold font-semibold font-montserrat transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Project Management -->
+                <div class="service-card bg-navy/80 backdrop-blur-sm border border-white/10 rounded-xl p-8 text-center hover:border-accent/30">
+                    <div class="service-icon mb-6">
+                        <i class="fas fa-clipboard-list text-6xl text-gold mb-4"></i>
+                    </div>
+                    <h3 class="font-playfair text-2xl font-bold mb-4 text-white">Project Management</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Seamless project coordination from start to finish. We manage timelines, 
+                        budgets, and quality to ensure your project runs smoothly.
+                    </p>
+                    <div class="flex flex-wrap gap-2 justify-center mb-6">
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Planning</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Scheduling</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm font-medium">Quality Control</span>
+                    </div>
+                    <button class="text-accent hover:text-gold font-semibold font-montserrat transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section with Storytelling -->
+    <section id="values" class="py-20 bg-navy relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.1) 35px, rgba(255,255,255,.1) 70px);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-playfair text-5xl font-bold mb-6">Our Core Values</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-inter leading-relaxed">
+                    Built on a foundation of integrity and excellence, these values guide every project we undertake.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Craftsmanship -->
+                <div class="scroll-reveal text-center group">
+                    <div class="bg-gradient-to-br from-accent/20 to-gold/20 rounded-full p-6 w-24 h-24 mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-tools text-3xl text-white mt-2"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-4">Superior Craftsmanship</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        When the Johnson family needed their 1960s kitchen transformed, we didn't just update—we crafted. 
+                        Every joint, every finish, every detail reflected years of mastery.
+                    </p>
+                </div>
+
+                <!-- Reliability -->
+                <div class="scroll-reveal text-center group" style="animation-delay: 0.2s;">
+                    <div class="bg-gradient-to-br from-gold/20 to-accent/20 rounded-full p-6 w-24 h-24 mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-handshake text-3xl text-white mt-2"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-4">Unwavering Reliability</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Through years of experience, we've learned that promises matter. When we say two weeks, 
+                        we mean two weeks. When we commit to a budget, we honor it.
+                    </p>
+                </div>
+
+                <!-- Innovation -->
+                <div class="scroll-reveal text-center group" style="animation-delay: 0.4s;">
+                    <div class="bg-gradient-to-br from-accent/20 to-gold/20 rounded-full p-6 w-24 h-24 mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-lightbulb text-3xl text-white mt-2"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-4">Creative Innovation</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        A challenging basement conversion became our greatest achievement when we discovered 
+                        how to blend modern living with historic character, creating something truly unique.
+                    </p>
+                </div>
+
+                <!-- Customer Focus -->
+                <div class="scroll-reveal text-center group" style="animation-delay: 0.6s;">
+                    <div class="bg-gradient-to-br from-gold/20 to-accent/20 rounded-full p-6 w-24 h-24 mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                        <i class="fas fa-heart text-3xl text-white mt-2"></i>
+                    </div>
+                    <h3 class="font-playfair text-xl font-bold mb-4">Customer Dedication</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm">
+                        Your vision becomes our mission. We listen, we understand, and we deliver beyond expectations. 
+                        Years of building relationships, not just structures.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="scroll-reveal">
+                    <div class="text-4xl font-bold text-accent mb-2 font-montserrat">500+</div>
+                    <div class="text-gray-300 font-inter">Projects Completed</div>
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.1s;">
+                    <div class="text-4xl font-bold text-gold mb-2 font-montserrat">15+</div>
+                    <div class="text-gray-300 font-inter">Years Experience</div>
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="text-4xl font-bold text-accent mb-2 font-montserrat">100%</div>
+                    <div class="text-gray-300 font-inter">Customer Satisfaction</div>
+                </div>
+                <div class="scroll-reveal" style="animation-delay: 0.3s;">
+                    <div class="text-4xl font-bold text-gold mb-2 font-montserrat">50+</div>
+                    <div class="text-gray-300 font-inter">Team Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Showcase -->
+    <section class="py-20 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-playfair text-5xl font-bold mb-6">Transformations That Inspire</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-inter leading-relaxed">
+                    See how we turn ordinary spaces into extraordinary experiences
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="scroll-reveal">
+                    <!-- Modern kitchen renovation showcase -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern kitchen renovation with white cabinets and marble countertops" 
+                         class="rounded-xl shadow-2xl w-full h-auto" />
+                </div>
+                <div class="scroll-reveal space-y-6">
+                    <h3 class="font-playfair text-3xl font-bold">Modern Kitchen Transformation</h3>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        This outdated 1980s kitchen was completely reimagined with custom cabinetry, 
+                        premium marble countertops, and state-of-the-art appliances. The open concept 
+                        design now seamlessly connects to the living area, creating the perfect space 
+                        for family gatherings.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-accent/20 text-accent px-4 py-2 rounded-lg font-medium">Custom Cabinetry</span>
+                        <span class="bg-gold/20 text-gold px-4 py-2 rounded-lg font-medium">Marble Surfaces</span>
+                        <span class="bg-accent/20 text-accent px-4 py-2 rounded-lg font-medium">Open Concept</span>
+                    </div>
+                    <button class="cta-button px-6 py-3 rounded-lg font-montserrat font-semibold">
+                        View Full Gallery
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mt-20">
+                <div class="scroll-reveal space-y-6 md:order-2">
+                    <h3 class="font-playfair text-3xl font-bold">Luxury Bathroom Retreat</h3>
+                    <p class="text-gray-300 leading-relaxed text-lg">
+                        Transformed a cramped bathroom into a spa-like sanctuary featuring a 
+                        walk-in shower with rainfall fixtures, heated floors, and elegant stone work. 
+                        Every detail was crafted to create a daily escape.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gold/20 text-gold px-4 py-2 rounded-lg font-medium">Heated Floors</span>
+                        <span class="bg-accent/20 text-accent px-4 py-2 rounded-lg font-medium">Natural Stone</span>
+                        <span class="bg-gold/20 text-gold px-4 py-2 rounded-lg font-medium">Spa Features</span>
+                    </div>
+                    <button class="cta-button px-6 py-3 rounded-lg font-montserrat font-semibold">
+                        See More Projects
+                    </button>
+                </div>
+                <div class="scroll-reveal md:order-1">
+                    <!-- Luxury bathroom with natural stone and modern fixtures -->
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Luxury bathroom with walk-in shower and natural stone finishes" 
+                         class="rounded-xl shadow-2xl w-full h-auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-navy">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-playfair text-5xl font-bold mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-inter leading-relaxed">
+                    The true measure of our success lies in the satisfaction of our clients
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card rounded-xl p-8 scroll-reveal">
+                    <div class="flex items-center mb-6">
+                        <!-- Happy family in their newly renovated home -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" 
+                             alt="Happy homeowner smiling in renovated space" 
+                             class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-montserrat font-semibold text-white">David Mitchell</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4 italic">
+                        "David and his team were incredibly helpful throughout our entire kitchen renovation. 
+                        The attention to detail was outstanding, and they completed everything on time and within budget. 
+                        Highly recommend them!"
+                    </p>
+                    <div class="text-accent font-medium text-sm">Kitchen Renovation Project</div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card rounded-xl p-8 scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <!-- Professional woman in business attire -->
+                        <img src="https://pixabay.com/get/g7074ff1bb8b7bc7038e77b0e0e8f71ad61d2e443bf92df8247518ae9907b215bb5aa3a67d29179e9b9f6cd916cfb133c47a2ab46abec40b0be6c0c5b859a3698_1280.jpg" 
+                             alt="Satisfied client in their beautifully remodeled space" 
+                             class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-montserrat font-semibold text-white">Sarah Johnson</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4 italic">
+                        "Palacio Remodeling transformed our master bathroom into a luxury spa retreat. 
+                        Their craftsmanship is impeccable, and they made the entire process stress-free. 
+                        We couldn't be happier with the results!"
+                    </p>
+                    <div class="text-gold font-medium text-sm">Bathroom Remodel</div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card rounded-xl p-8 scroll-reveal" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <!-- Mature professional man -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" 
+                             alt="Pleased homeowner standing in front of renovated home exterior" 
+                             class="w-12 h-12 rounded-full object-cover mr-4" />
+                        <div>
+                            <h4 class="font-montserrat font-semibold text-white">Michael Rodriguez</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-4 italic">
+                        "From the initial consultation to the final walk-through, Palacio Remodeling exceeded our expectations. 
+                        Their team's professionalism and expertise made our home addition project seamless. 
+                        Outstanding quality and service!"
+                    </p>
+                    <div class="text-accent font-medium text-sm">Home Addition</div>
+                </div>
+            </div>
+
+            <!-- Additional testimonials slider indicators -->
+            <div class="flex justify-center mt-12 space-x-2">
+                <div class="w-3 h-3 rounded-full bg-accent"></div>
+                <div class="w-3 h-3 rounded-full bg-white/30"></div>
+                <div class="w-3 h-3 rounded-full bg-white/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="font-playfair text-5xl font-bold mb-6">Start Your Transformation</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto font-inter leading-relaxed">
+                    Ready to turn your vision into reality? Contact us today for a free consultation 
+                    and let's discuss how we can transform your space.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Contact Form -->
+                <div class="scroll-reveal">
+                    <div class="bg-navy/80 backdrop-blur-sm border border-white/10 rounded-xl p-8">
+                        <h3 class="font-playfair text-2xl font-bold mb-6 text-white">Get Your Free Quote</h3>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">First Name *</label>
+                                    <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all" placeholder="John" />
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Last Name *</label>
+                                    <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all" placeholder="Doe" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">Email Address *</label>
+                                <input type="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all" placeholder="john@example.com" />
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">Phone Number</label>
+                                <input type="tel" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all" placeholder="(555) 123-4567" />
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">Project Type</label>
+                                <select class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all">
+                                    <option value="">Select a project type</option>
+                                    <option value="kitchen">Kitchen Renovation</option>
+                                    <option value="bathroom">Bathroom Remodel</option>
+                                    <option value="addition">Home Addition</option>
+                                    <option value="custom">Custom Construction</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2 font-medium">Project Details</label>
+                                <textarea rows="4" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 transition-all" placeholder="Tell us about your project vision, timeline, and any specific requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full cta-button py-4 text-lg font-montserrat font-semibold rounded-lg text-white">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send My Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="space-y-8">
+                        <!-- Contact Methods -->
+                        <div class="bg-navy/60 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                            <h3 class="font-playfair text-xl font-bold mb-6 text-white">Get In Touch</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-accent/20 rounded-full p-3">
+                                        <i class="fas fa-phone text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold">Call Us</div>
+                                        <div class="text-gray-300">(555) 123-REMODEL</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-gold/20 rounded-full p-3">
+                                        <i class="fas fa-envelope text-gold"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold">Email Us</div>
+                                        <div class="text-gray-300">info@palacioremodeling.com</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-accent/20 rounded-full p-3">
+                                        <i class="fas fa-map-marker-alt text-accent"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-semibold">Visit Our Office</div>
+                                        <div class="text-gray-300">123 Construction Ave<br>Building City, BC 12345</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="bg-navy/60 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                            <h3 class="font-playfair text-xl font-bold mb-4 text-white">Business Hours</h3>
+                            <div class="space-y-2 text-gray-300">
+                                <div class="flex justify-between">
+                                    <span>Monday - Friday</span>
+                                    <span class="text-white font-medium">7:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Saturday</span>
+                                    <span class="text-white font-medium">8:00 AM - 4:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Sunday</span>
+                                    <span class="text-gold font-medium">By Appointment</span>
+                                </div>
+                                <div class="mt-4 p-3 bg-accent/10 rounded-lg">
+                                    <p class="text-accent text-sm font-medium">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        Emergency services available 24/7
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick CTA -->
+                        <div class="bg-gradient-to-r from-accent/20 to-gold/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
+                            <h3 class="font-playfair text-xl font-bold mb-3 text-white">Ready to Start?</h3>
+                            <p class="text-gray-300 mb-4">Schedule your free consultation today!</p>
+                            <button class="cta-button px-6 py-3 rounded-lg font-montserrat font-semibold">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Book Consultation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="logo-enhanced">
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAC0AK0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0aiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" alt="Palacio Remodeling" class="w-16 h-16 object-contain" />
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl font-bold">Palacio Remodeling</h3>
+                            <p class="text-gray-400 font-montserrat">Transform Your Space</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6 max-w-md">
+                        With years of experience in premium construction and remodeling, 
+                        we're dedicated to transforming your vision into reality with unmatched quality and craftsmanship.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white/10 hover:bg-accent/20 p-3 rounded-full transition-colors">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent/20 p-3 rounded-full transition-colors">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent/20 p-3 rounded-full transition-colors">
+                            <i class="fab fa-linkedin-in text-white"></i>
+                        </a>
+                        <a href="#" class="bg-white/10 hover:bg-accent/20 p-3 rounded-full transition-colors">
+                            <i class="fab fa-youtube text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6">Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-accent transition-colors">Kitchen Renovation</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Bathroom Remodel</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Home Additions</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Custom Construction</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Project Management</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-montserrat font-bold text-lg mb-6">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-accent"></i>
+                            <span>(555) 123-REMODEL</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-accent"></i>
+                            <span>info@palacioremodeling.com</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-accent mt-1"></i>
+                            <span>123 Construction Ave<br>Building City, BC 12345</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Palacio Remodeling. All rights reserved. | Licensed & Insured | ROC #123456</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations and Interactions -->
+    <script>
+    (function() {
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.scroll-reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('revealed');
+                }
+            });
+        }
+        
+        // Smooth scrolling for navigation links
+        function smoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Navbar background on scroll
+        function handleNavbarScroll() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-navy/95');
+                nav.classList.remove('bg-navy/90');
+            } else {
+                nav.classList.add('bg-navy/90');
+                nav.classList.remove('bg-navy/95');
+            }
+        }
+        
+        // Service card hover animations
+        function initServiceCardAnimations() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const icon = this.querySelector('.service-icon i');
+                    if (icon) {
+                        icon.style.transform = 'rotateY(360deg) scale(1.1)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const icon = this.querySelector('.service-icon i');
+                    if (icon) {
+                        icon.style.transform = 'rotateY(0deg) scale(1)';
+                    }
+                });
+            });
+        }
+        
+        // Form validation and submission
+        function initContactForm() {
+            const form = document.querySelector('#contact form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+        }
+        
+        // Initialize all functions
+        function init() {
+            smoothScroll();
+            initServiceCardAnimations();
+            initContactForm();
+            revealOnScroll(); // Initial check
+        }
+        
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            revealOnScroll();
+            handleNavbarScroll();
+        });
+        
+        window.addEventListener('load', init);
+        
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                // TODO: Implement mobile menu toggle functionality
+                console.log('Mobile menu toggle clicked');
+            });
+        }
+    })();
+    </script>
+</body>
+</html>
